@@ -5,6 +5,18 @@ header,
     height: 100%;
 }
 
+section {
+    min-height: 100vh;
+}
+
+#profile, #education, #contact {
+    background-color: aqua;
+}
+
+#work, #skills {
+    background-color: brown;
+}
+
 #intro {
     background: url("../img/budapest_1_1920x1280-min.jpg")no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -57,4 +69,22 @@ body {
 .top-menu {
     margin-left: 15px;
     margin-right: 15px;
+}
+
+.profile-picture {
+    width: 50%;
+}
+
+img {
+    width: 100%;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.full-content {
+    padding-left: 0px;
+    padding-right: 0px;
 }

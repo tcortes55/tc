@@ -13,6 +13,8 @@
     <!-- Material Design Bootstrap -->
 <!--    <link href="css/mdb.min.css" rel="stylesheet">-->
     <link href="css/mdb_TEST.css" rel="stylesheet">
+    <!-- Melanie custom styles (optional) -->
+<!--    <link href="css/mel-styles.min.css" rel="stylesheet">-->
     <!-- Your custom styles (optional) -->
     <link href="css/style.css" rel="stylesheet">
 </head>
@@ -26,7 +28,7 @@
         
         <!--Navbar-->
         <nav class="navbar navbar-expand-lg navbar-expand-md navbar-dark fixed-top scrolling-navbar">
-            <div class="container">
+            <div class="container-fluid">
 
                 <!-- Navbar brand -->
 <!--                <a class="navbar-brand" href="#intro">HOME</a>-->
@@ -43,24 +45,24 @@
                     <!-- Links -->
                     <ul class="navbar-nav mr-auto smooth-scroll justify-content-center d-flex flex-fill">
                         <li class="nav-item top-menu">
-                            <a class="nav-link" href="#intro">Home
+                            <a class="nav-link" href="#intro">HOME
 <!--                                <span class="sr-only">(current)</span>-->
                             </a>
                         </li>
                         <li class="nav-item top-menu">
-                            <a class="nav-link" href="#profile">Profile</a>
+                            <a class="nav-link" href="#profile">PROFILE</a>
                         </li>
                         <li class="nav-item top-menu">
-                            <a class="nav-link" href="#work">Work experience</a>
+                            <a class="nav-link" href="#work">WORK EXPERIENCE</a>
                         </li>
                         <li class="nav-item top-menu">
-                            <a class="nav-link" href="#education">Education</a>
+                            <a class="nav-link" href="#education">EDUCATION</a>
                         </li>
                         <li class="nav-item top-menu">
-                            <a class="nav-link" href="#skills">Skills</a>
+                            <a class="nav-link" href="#skills">SKILLS</a>
                         </li>
                         <li class="nav-item top-menu">
-                            <a class="nav-link" href="#contact">Contact</a>
+                            <a class="nav-link" href="#contact">CONTACT</a>
                         </li>
 
                     </ul>
@@ -80,7 +82,7 @@
             <div class="mask pattern-1"></div>
             <div class="mask rgba-black-strong">
                 
-                <div class="container-fluid d-flex align-items-center justify-content-center h-100">
+                <div class="container-fluid-fluid d-flex align-items-center justify-content-center h-100">
                     
                     <div class="row d-flex justify-content-center text-center">
                         
@@ -107,65 +109,76 @@
     
 
     <!--Main layout-->
-    <main class="mt-5">
-        <div class="container">
-
-
+    <main class="">
+        <div class="container-fluid full-content">
+            
             <!--Section: Profile-->
             <section id="profile" class="text-center">
 
-                <!-- Heading -->
-                <h2 class="mb-5 font-weight-bold">Best Features</h2>
+                <div class="container-fluid section-wrapper">
+                    <div class="section-content">
+                        <div class="row">          
+                            <div class="col-md-7 match-height">
 
-                <!--Grid row-->
-                <div class="row d-flex justify-content-center mb-4">
+                                <!-- PROFILE TEXT START -->
+                                <div class="profile-text padding-right-yes">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h2 class="section-title uppercase">Hello, I'm Tarcisio.</h2>
 
-                    <!--Grid column-->
-                    <div class="col-md-8">
+                                            <p>
+                                                Tarcisio Cortes, 26 years old, Brazilian engineer.
+                                            </p>
 
-                        <!-- Description -->
-                        <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi voluptate hic provident nulla repellat
-                            facere esse molestiae ipsa labore porro minima quam quaerat rem, natus repudiandae debitis est
-                            sit pariatur.</p>
+                                            <span class="divider"></span>
 
+                                            <p class="text-grey">
+                                                Currently pursuing a masters degree in Budapest, Hungary.
+                                                I'm studying Computer Science Engineering at Óbuda University.
+                                            </p>
+
+                                            <p class="text-grey">
+                                                Bachelor in Control and Automation Engineering at Federal University of Minas Gerais (UFMG), in Belo Horizonte, Brazil.
+                                            </p>
+
+                                        </div>
+                                        <!-- //.col-md-12 -->
+                                    </div>
+                                    <!-- //.row -->
+                                </div>
+                                <!-- //PROFILE TEXT END -->
+
+                                <!-- CONTACT DETAILS START -->
+                                <div class="contact-details padding-right-yes">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-md-5">
+                                            <ul class="list-unstyled text-grey">
+                                                <li><i class="icon-Location-2 fa-lg"></i> Budapest, Hungary</li>
+                                                <li><i class="icon-At-Sign fa-lg"></i> tarcisiocortes<i class="fa fa-at"></i>gmail.com</li>
+                                            </ul>
+                                        </div>
+                                        <!-- //.col-md-5 -->
+                                    </div>
+                                    <!-- //.row -->
+                                </div>
+                                <!-- //CONTACT DETAILS END -->
+
+                            </div>
+                            <!-- //.col-md-7 -->
+
+                            <!-- PROFILE PICTURE START -->
+                            <div class="col-md-5 hidden-xs hidden-sm match-height pp-wrapper">
+                                <div class="profile-picture style-one">
+                                    <img src="img/profile-picture-1.jpg" alt="profile picture" class="img-responsive"/>
+                                </div>
+                            </div>
+                            <!-- //PROFILE PICTURE END -->
+                        </div>
+                        <!-- //.row -->
                     </div>
-                    <!--Grid column-->
-
+                    <!-- //.section-content -->
                 </div>
-                <!--Grid row-->
-
-                <!--Grid row-->
-                <div class="row">
-
-                    <!--Grid column-->
-                    <div class="col-md-4 mb-1">
-                        <i class="fa fa-camera-retro fa-4x orange-text"></i>
-                        <h4 class="my-4 font-weight-bold">Experience</h4>
-                        <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima
-                            assumenda deleniti hic.</p>
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-md-4 mb-1">
-                        <i class="fa fa-heart fa-4x orange-text"></i>
-                        <h4 class="my-4 font-weight-bold">Happiness</h4>
-                        <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima
-                            assumenda deleniti hic.</p>
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-md-4 mb-1">
-                        <i class="fa fa-bicycle fa-4x orange-text"></i>
-                        <h4 class="my-4 font-weight-bold">Adventure</h4>
-                        <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima
-                            assumenda deleniti hic.</p>
-                    </div>
-                    <!--Grid column-->
-
-                </div>
-                <!--Grid row-->
+                <!-- //.container-fluid -->
 
             </section>
             <!--Section: Profile--> 
@@ -492,7 +505,7 @@
 
         <!-- Social buttons -->
         <div>
-            <div class="container">
+            <div class="container-fluid">
                 <!--Grid row-->
                 <div class="row py-4 d-flex align-items-center">
 
@@ -539,6 +552,8 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min_.js"></script>
+    <!-- Melanie JavaScript -->
+<!--    <script type="text/javascript" src="js/mel-scripts.min.js"></script>-->
     <!-- Custom JavaScript -->
     <script type="text/javascript" src="js/main.js"></script>
 </body>
