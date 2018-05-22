@@ -132,8 +132,11 @@ img {
 /*    z-index: 99999;*/
 }
 
-.block-content {
-    padding: 24px;
+@media screen and (min-width: 850px)
+{
+    .block-content {
+        padding: 24px;
+    }   
 }
 
 .TEST {
@@ -172,4 +175,20 @@ img {
     text-align: center;
     background-color: transparent;
     color: white;
+}
+
+.block-right-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  height: 50vh;
+}
+
+@media screen and (max-width: 767px) {
+    .block-left, .portrait {
+        display: none;
+    }
 }
