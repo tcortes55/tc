@@ -215,7 +215,7 @@ img {
 }
 
 .timeline-item {
-  border-left: 5px solid;
+  border-left: 6px solid;
 /*  height: 100%;*/
 /*  background: #000;*/
 /*  left: -30px;*/
@@ -224,24 +224,41 @@ img {
 }
 
 .timeline-item-empty {
-    border-left: 5px dotted #bfbfbf;
+    border-left: 6px dotted #bfbfbf;
 }
 
 .bolinha {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    position: relative;
+    left: -11px;
+    top: -1px;
+}
+
+.line {
   content: '';
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  border: 2px solid;
+  width: 18px;
+  height: 0px;
+  border: 1px solid;
   position: relative;
-  background: #fff;
-  left: -10px;
-  top: 0;
+/*  background: #fff;*/
+  left: 3px;
+  top: -9px;
+    
+}
+
+.timeline-item .bolinha {
+    border: 8px solid;
+    background-color: ;
 }
 
 .timeline-item-empty .bolinha {
+    border: 3px solid;
     border-color: #bfbfbf;
-    background-color: #bfbfbf;
+    background: #fff;
+/*    background-color: #bfbfbf;*/
 }
 
 .timeline-date {
@@ -259,9 +276,10 @@ img {
     left: 20px;
     top: -60px;
 /*    margin-left: 20px;*/
-    border: 2px solid #abc;
+    border: 2px solid;
     font-size: 0.8em;
     padding: 4px;
+    max-width: 180px;
 }
 
 
@@ -273,9 +291,17 @@ img {
 
 
 
+/*Setting colors for each institution*/
+.ufmg, .ufmg .bolinha, .ufmg .line, .ufmg .timeline-item-content {
+    border-color: red;
+}
 
+.obuda, .obuda .bolinha, .obuda .line, .obuda .timeline-item-content {
+    border-color: #005e92;
+}
 
-
-
+.puc, .puc .bolinha, .puc .line, .puc .timeline-item-content {
+    border-color: #073b23;
+}
 
 
