@@ -311,7 +311,7 @@ img {
 }
 .timeline-item-content {
     position: relative;
-    top: -60px;
+    top: -30px;
     border: 2px solid;
     font-size: 0.9em;
     padding: 4px;
@@ -371,4 +371,43 @@ img {
 }
 .height-150px {
     height: 270px;
+}
+
+
+
+
+.chapter-title {
+    height: calc(100vh - 45px);
+}
+
+
+.chapter {
+    position: relative;
+/*z-index: 200;*/
+/*background: #fff*/
+}
+.chapter .chapter_title {
+/*    position: absolute;*/
+    width: 50%;
+    top: 0;
+    left: 0;
+    height: calc(100vh - 45px);
+/*
+    -webkit-transition: 1s width cubic-bezier(.77, 0, .175, 1);
+    transition: 1s width cubic-bezier(.77, 0, .175, 1);
+*/
+    z-index: 200;
+}
+.chapter .chapter_title.title-fixed {
+    position: fixed
+}
+.chapter .chapter-content {
+/*
+    position: relative;
+    width: 50%;
+    left: 50%;
+*/
+    z-index: 100;
+    -webkit-transition: 1s width cubic-bezier(.77, 0, .175, 1) 0, 1s left cubic-bezier(.77, 0, .175, 1) 0;
+    transition: 1s width cubic-bezier(.77, 0, .175, 1) 0, 1s left cubic-bezier(.77, 0, .175, 1) 0
 }
