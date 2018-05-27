@@ -185,21 +185,7 @@ img {
   padding: 0;
   margin: 0;
   list-style: none;
-  height: 50vh;
-}
-
-@media screen and (max-width: 767px) {
-/*
-    .portrait {
-        display: none;
-    }
-    .block-left {
-        height: 50vh;
-    }
-*/
-    .block-left, .portrait {
-        display: none;
-    }
+/*  height: 50vh;*/
 }
 
 
@@ -390,6 +376,12 @@ img {
     
 /*    z-index: 999999;*/
 }
+.chapter-content {
+    min-height: calc(100vh - 45px);
+    
+/*    z-index: 999999;*/
+}
+
 
 
 .chapter {
@@ -420,13 +412,49 @@ img {
 .left-side {
     left: 50%;
 }
-.chapter .chapter-content {
 /*
+.chapter .chapter-content {
     position: relative;
     width: 50%;
     left: 50%;
-*/
     z-index: 100;
     -webkit-transition: 1s width cubic-bezier(.77, 0, .175, 1) 0, 1s left cubic-bezier(.77, 0, .175, 1) 0;
     transition: 1s width cubic-bezier(.77, 0, .175, 1) 0, 1s left cubic-bezier(.77, 0, .175, 1) 0
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 767px) {
+    .portrait {
+        display: none;
+    }
+    .block-left {
+        height: 50vh;
+    }
+    .chapter-title {
+        height: 50vh;
+    }
+    .block-half {
+        padding: 50px;
+    }
+/*
+    .block-left, .portrait {
+        display: none;
+    }
+*/
 }
