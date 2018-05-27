@@ -44,47 +44,50 @@ $('a[href*="#"]')
 
 
 ///// Fixing chapter title on scroll
-
-var tes = function(){
-    
-   console.log('Event Fired');
-    
-};
-
 var execScroll = function() {
     
     var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     
     if (w > 767)
     {
-        var title = $("#chapter-title-resume");
-        var content = $("#chapter-content-resume");
-
-        var titleHeight = title.outerHeight(),
-            contentHeight = content.outerHeight(),
-            contentOffsetTop = content.offset().top,
-            currPos = window.pageYOffset;
-
-        if (currPos <= contentOffsetTop - 45)
-        {
-            title.removeClass("title-fixed");
-            content.removeClass("left-side");
-            title.css("top", 0);
-        }
-        else if (currPos > (contentOffsetTop - 45 + contentHeight - titleHeight))
-        {
-            title.removeClass("title-fixed");
-            content.removeClass("left-side");
-            title.css("top", contentHeight - titleHeight);
-        }
-        else
-        {
-            title.css("top", 45);
-            title.addClass("title-fixed");
-            content.addClass("left-side");
-        }
+        fixTitle("chapter-title-profile", "chapter-content-profile");
+        fixTitle("chapter-title-resume", "chapter-content-resume");
     }
 };
+
+function fixTitle(titleId, contentId) {
+    var navbarOffset = 45;
+    
+    var titleRef = "#" + titleId;
+    var contentRef = "#" + contentId;
+    
+    var title = $(titleRef);
+    var content = $(contentRef);
+
+    var titleHeight = title.outerHeight(),
+        contentHeight = content.outerHeight(),
+        contentOffsetTop = content.offset().top,
+        currPos = window.pageYOffset;
+
+    if (currPos <= contentOffsetTop - navbarOffset)
+    {
+        title.removeClass("title-fixed");
+        content.removeClass("left-side");
+        title.css("top", 0);
+    }
+    else if (currPos > (contentOffsetTop - navbarOffset + contentHeight - titleHeight))
+    {
+        title.removeClass("title-fixed");
+        content.removeClass("left-side");
+        title.css("top", contentHeight - titleHeight);
+    }
+    else
+    {
+        title.css("top", navbarOffset);
+        title.addClass("title-fixed");
+        content.addClass("left-side");
+    }
+}
 
 $(document).on( 'scroll', execScroll);
 $(document).on( 'resize', execScroll);
