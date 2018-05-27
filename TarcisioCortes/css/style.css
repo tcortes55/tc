@@ -140,7 +140,8 @@ img {
 }
 
 .TEST {
-    background-color: aqua
+    background-color: aqua;
+    display: none;
 }
 
 .hr-red {
@@ -188,6 +189,14 @@ img {
 }
 
 @media screen and (max-width: 767px) {
+/*
+    .portrait {
+        display: none;
+    }
+    .block-left {
+        height: 50vh;
+    }
+*/
     .block-left, .portrait {
         display: none;
     }
@@ -379,7 +388,7 @@ img {
 .chapter-title {
     height: calc(100vh - 45px);
     
-    z-index: 999999;
+/*    z-index: 999999;*/
 }
 
 
@@ -405,7 +414,11 @@ img {
 }
 .title-fixed {
     position: fixed;
+    left: 0px;
 /*    top: 45px;*/
+}
+.left-side {
+    left: 50%;
 }
 .chapter .chapter-content {
 /*

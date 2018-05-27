@@ -53,42 +53,49 @@ var tes = function(){
 
 var execScroll = function() {
     
-    var title = $("#chapter-title-resume");
-    var content = $("#chapter-content-resume");
+    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     
-    var titleHeight = title.outerHeight(),
-        titleOffsetTop = title.offset().top,
-        titleTop = title.css("top"),
-        contentHeight = content.outerHeight(),
-        contentOffsetTop = content.offset().top,
-        contentTop = content.css("top"),
-        currPos = window.pageYOffset;
-    
-    if (currPos <= contentOffsetTop - 45)
+    if (w > 767)
     {
-        title.removeClass("title-fixed");
-        title.css("top", 0);
+        var title = $("#chapter-title-resume");
+        var content = $("#chapter-content-resume");
+
+        var titleHeight = title.outerHeight(),
+            titleOffsetTop = title.offset().top,
+            titleTop = title.css("top"),
+            contentHeight = content.outerHeight(),
+            contentOffsetTop = content.offset().top,
+            contentTop = content.css("top"),
+            currPos = window.pageYOffset;
+
+        if (currPos <= contentOffsetTop - 45)
+        {
+            title.removeClass("title-fixed");
+            content.removeClass("left-side");
+            title.css("top", 0);
+        }
+    //    else if (currPos > contentOffsetTop && currPos <= (contentOffsetTop + contentHeight - titleHeight))
+    //    {
+    //        title.css("position", "fixed");
+    //        title.css("top", currPos - contentOffsetTop + 45);
+    //    }
+    //    else if (currPos > (contentOffsetTop + contentHeight - titleHeight))
+        else if (currPos > (contentOffsetTop - 45 + contentHeight - titleHeight))
+    //    else if (currPos > 1966)
+        {
+    //        title.css("position", "relative");
+            title.removeClass("title-fixed");
+            content.removeClass("left-side");
+            title.css("top", contentHeight - titleHeight);
+        }
+        else
+        {
+            title.css("top", 45);
+            title.addClass("title-fixed");
+            content.addClass("left-side");
+    //        title.css("top", currPos - titleOffsetTop + 45);
+        }
     }
-//    else if (currPos > contentOffsetTop && currPos <= (contentOffsetTop + contentHeight - titleHeight))
-//    {
-//        title.css("position", "fixed");
-//        title.css("top", currPos - contentOffsetTop + 45);
-//    }
-//    else if (currPos > (contentOffsetTop + contentHeight - titleHeight))
-    else if (currPos > (contentOffsetTop - 45 + contentHeight - titleHeight))
-//    else if (currPos > 1966)
-    {
-//        title.css("position", "relative");
-        title.removeClass("title-fixed");
-        title.css("top", contentHeight - titleHeight);
-    }
-    else
-    {
-        title.css("top", 45);
-        title.addClass("title-fixed");
-//        title.css("top", currPos - titleOffsetTop + 45);
-    }
-    
 //    o.css("top", o.top);
 //        console.log(e);
 //        console.log(n);
