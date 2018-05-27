@@ -5,13 +5,17 @@ header,
     height: 100%;
 }
 
+/*
 #profile, #education, #contact {
     background-color: aqua;
 }
+*/
 
+/*
 #work, #skills {
     background-color: bisque;
 }
+*/
 
 #intro {
     background: url("../img/budapest_1_1920x1280-min.jpg")no-repeat center center fixed;

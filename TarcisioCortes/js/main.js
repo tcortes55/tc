@@ -52,6 +52,7 @@ var execScroll = function() {
     {
         fixTitle("chapter-title-profile", "chapter-content-profile");
         fixTitle("chapter-title-resume", "chapter-content-resume");
+        fixTitle("chapter-title-contact", "chapter-content-contact");
     }
 };
 
