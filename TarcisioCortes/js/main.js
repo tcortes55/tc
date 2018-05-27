@@ -1,3 +1,8 @@
+/////
+var d = new Date();
+$("#currYear").text(d.getFullYear());
+
+
 ///// Smooth scroll
 
 // Select all links with hashes

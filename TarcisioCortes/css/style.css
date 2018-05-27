@@ -110,7 +110,8 @@ img {
     padding: 68px;
 }
 .block-left {
-    background-color: #292929;
+/*    background-color: #292929;*/
+    background-color: rgba(4, 5, 7, 1);
     color: #f9f9f9;
     z-index: 1;
 }

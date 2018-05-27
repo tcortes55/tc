@@ -6900,7 +6900,8 @@ footer.page-footer {
     width: auto; }
   footer.page-footer .footer-copyright {
     overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.2);
+/*    background-color: rgba(0, 0, 0, 0.2);*/
+    background-color: #0A0A0A;
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.6); }
   footer.page-footer a {
