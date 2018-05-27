@@ -378,6 +378,8 @@ img {
 
 .chapter-title {
     height: calc(100vh - 45px);
+    
+    z-index: 999999;
 }
 
 
@@ -398,8 +400,12 @@ img {
 */
     z-index: 200;
 }
-.chapter .chapter_title.title-fixed {
+.chapter .chapter-title.title-fixed {
     position: fixed
+}
+.title-fixed {
+    position: fixed;
+/*    top: 45px;*/
 }
 .chapter .chapter-content {
 /*
