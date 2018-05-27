@@ -61,11 +61,8 @@ var execScroll = function() {
         var content = $("#chapter-content-resume");
 
         var titleHeight = title.outerHeight(),
-            titleOffsetTop = title.offset().top,
-            titleTop = title.css("top"),
             contentHeight = content.outerHeight(),
             contentOffsetTop = content.offset().top,
-            contentTop = content.css("top"),
             currPos = window.pageYOffset;
 
         if (currPos <= contentOffsetTop - 45)
@@ -74,16 +71,8 @@ var execScroll = function() {
             content.removeClass("left-side");
             title.css("top", 0);
         }
-    //    else if (currPos > contentOffsetTop && currPos <= (contentOffsetTop + contentHeight - titleHeight))
-    //    {
-    //        title.css("position", "fixed");
-    //        title.css("top", currPos - contentOffsetTop + 45);
-    //    }
-    //    else if (currPos > (contentOffsetTop + contentHeight - titleHeight))
         else if (currPos > (contentOffsetTop - 45 + contentHeight - titleHeight))
-    //    else if (currPos > 1966)
         {
-    //        title.css("position", "relative");
             title.removeClass("title-fixed");
             content.removeClass("left-side");
             title.css("top", contentHeight - titleHeight);
@@ -93,24 +82,9 @@ var execScroll = function() {
             title.css("top", 45);
             title.addClass("title-fixed");
             content.addClass("left-side");
-    //        title.css("top", currPos - titleOffsetTop + 45);
         }
     }
-//    o.css("top", o.top);
-//        console.log(e);
-//        console.log(n);
-//        a = window.height(),
-//        r = window.scrollTop();
-//    if (r >= n && n + e - a >= r) i.addClass("title-fixed").css({
-//        top: 0
-//    });
-//    else {
-//        var c = r - n;
-//        c = Math.max(0, c), c = Math.min(e - a, c), i.removeClass("title-fixed").css({
-//            top: c
-//        })
-//    }
 };
 
 $(document).on( 'scroll', execScroll);
-//$(document).on( 'resize', execScroll);
+$(document).on( 'resize', execScroll);
