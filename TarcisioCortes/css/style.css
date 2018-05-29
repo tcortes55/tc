@@ -457,16 +457,31 @@ img {
 .left-side {
     left: 50%;
 }
-/*
-.chapter .chapter-content {
-    position: relative;
-    width: 50%;
-    left: 50%;
-    z-index: 100;
-    -webkit-transition: 1s width cubic-bezier(.77, 0, .175, 1) 0, 1s left cubic-bezier(.77, 0, .175, 1) 0;
-    transition: 1s width cubic-bezier(.77, 0, .175, 1) 0, 1s left cubic-bezier(.77, 0, .175, 1) 0
+
+
+
+/*Timeline animation*/
+.timeline-container ul li div {
+  visibility: hidden;
+  opacity: 0;
+  transition: all .5s ease-in-out;
 }
-*/
+ 
+/*.timeline-container ul li:nth-child(odd) div {*/
+.timeline-container .container-right ul li div {
+  transform: translate3d(2vw,0,0);
+}
+ 
+/*.timeline-container ul li:nth-child(even) div {*/
+.timeline-container .container-left ul li div {
+  transform: translate3d(-2vw,0,0);
+}
+ 
+.timeline-container ul li.in-view div {
+  transform: none;
+  visibility: visible;
+  opacity: 1;
+}
 
 
 
