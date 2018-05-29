@@ -489,10 +489,10 @@ img {
         display: none;
     }
     .block-left {
-        height: 50vh;
+        height: 25vh;
     }
     .chapter-title {
-        height: 50vh;
+        height: 25vh;
     }
     .block-half {
         padding: 50px 34px;
@@ -504,7 +504,15 @@ img {
 */
 }
 @media screen and (min-width: 768px) and (max-width: 959px) {
-    .block-half {
+    .resume .block-half {
         padding: 68px 34px;
+    }
+}
+@media screen and (max-width: 369px) {
+    .timeline-item-content .interval {
+    font-size: 0.8em;
+    }
+    .block-half {
+        padding: 50px 25px;
     }
 }

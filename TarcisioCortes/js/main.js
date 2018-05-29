@@ -96,4 +96,4 @@ function fixTitle(titleId, contentId) {
 }
 
 $(document).on( 'scroll', execScroll);
-$(document).on( 'resize', execScroll);
+$(window).on( 'resize', execScroll);
