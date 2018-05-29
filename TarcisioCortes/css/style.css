@@ -5,17 +5,9 @@ header,
     height: 100%;
 }
 
-/*
-#profile, #education, #contact {
-    background-color: aqua;
+h1 {
+    font-family: "Oswald";
 }
-*/
-
-/*
-#work, #skills {
-    background-color: bisque;
-}
-*/
 
 #intro {
     background: url("../img/budapest_1_1920x1280-min.jpg")no-repeat center center fixed;
@@ -469,12 +461,12 @@ img {
  
 /*.timeline-container ul li:nth-child(odd) div {*/
 .timeline-container .container-right ul li div {
-  transform: translate3d(2vw,0,0);
+  transform: translate3d(1.5vw,0,0);
 }
  
 /*.timeline-container ul li:nth-child(even) div {*/
 .timeline-container .container-left ul li div {
-  transform: translate3d(-2vw,0,0);
+  transform: translate3d(-1.5vw,0,0);
 }
  
 .timeline-container ul li.in-view div {
@@ -509,14 +501,12 @@ img {
     .chapter-title {
         height: 25vh;
     }
-    .block-half {
+    .resume .block-half {
         padding: 50px 34px;
     }
-/*
-    .block-left, .portrait {
-        display: none;
+    .chapter-content {
+        min-height: calc(75vh - 45px);
     }
-*/
 }
 @media screen and (min-width: 768px) and (max-width: 959px) {
     .resume .block-half {
@@ -528,6 +518,6 @@ img {
     font-size: 0.8em;
     }
     .block-half {
-        padding: 50px 25px;
+        padding: 45px 35px;
     }
 }
