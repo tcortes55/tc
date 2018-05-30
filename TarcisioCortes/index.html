@@ -736,6 +736,7 @@
     $(document).ready(function() {
 //        var items = document.querySelectorAll(".timeline-container li");
         var items = document.querySelectorAll(".item-wrapper");
+        var itemsTitle = document.querySelectorAll(".block-left-title");
  
         // code for the isElementInViewport function
 
@@ -743,6 +744,11 @@
           for (var i = 0; i < items.length; i++) {
             if (isElementInViewport(items[i])) {
               items[i].classList.add("in-view");
+            }
+          }
+          for (var i = 0; i < itemsTitle.length; i++) {
+            if (isElementInViewport(itemsTitle[i])) {
+              itemsTitle[i].classList.add("in-view");
             }
           }
         }

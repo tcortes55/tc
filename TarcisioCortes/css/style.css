@@ -125,10 +125,10 @@ img {
 }
 
 .portrait {
-    max-width: 136px;
+    max-width: 110px;
     position: absolute;
-    left: calc(50vw - 80px);
-    top: calc(50vh - 102px);
+    left: calc(50vw - 65px);
+    top: calc(50vh - 89px);
 /*    z-index: 999999;*/
 }
 
@@ -137,6 +137,11 @@ img {
     .block-content {
         padding: 24px;
     }   
+    .portrait {
+        max-width: 136px;
+        left: calc(50vw - 80px);
+        top: calc(50vh - 102px);
+    }
 }
 
 .TEST {
@@ -479,23 +484,37 @@ img {
 .item-wrapper {
     height: 35%;
 }
-.timeline-container ul li .item-wrapper {
+.item-wrapper {
   visibility: hidden;
   opacity: 0;
   transition: all .5s ease-in-out;
 }
  
 /*.timeline-container ul li:nth-child(odd) div {*/
-.timeline-container .container-right ul li .item-wrapper {
+.container-right .item-wrapper {
   transform: translate3d(1.5vw,0,0);
 }
  
 /*.timeline-container ul li:nth-child(even) div {*/
-.timeline-container .container-left ul li .item-wrapper {
+.container-left .item-wrapper {
   transform: translate3d(-1.5vw,0,0);
 }
- 
-.timeline-container ul li .item-wrapper.in-view {
+ .item-wrapper.in-view {
+  transform: none;
+  visibility: visible;
+  opacity: 1;
+}
+
+/*Chapter title animation*/
+.block-left-title {
+  visibility: hidden;
+  opacity: 0;
+  transition: all .5s ease-in-out;
+}
+.chapter-title .block-left-title {
+  transform: translate3d(-5vw,0,0);
+}
+.block-left-title.in-view {
   transform: none;
   visibility: visible;
   opacity: 1;
