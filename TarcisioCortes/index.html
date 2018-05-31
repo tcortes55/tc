@@ -337,17 +337,141 @@
             
             <!--Section: Skills-Parallax-->
             <section id="skills">
-                <div class="row block-horizontal view">
+<!--                <div class="row block-horizontal view">-->
+                <div class="row section-height">
+<!--                    <div class="my-parallax">-->
                     <div class="my-parallax">
+<!--
                     </div>
                     <div class="mask rgba-black-strong">
-                        <div class="row block-horizontal vertical-align parallax-caption">
+-->
+                        <div id="skills-mask" class="mask rgba-black-strong vertical-align">
+                            <div>
+                                <div class="row justify-content-center">
+<!--
                             <div>
                                 <div class="col-md-12 col-lg-12 col-xg-12">
                                     <h1 class="text-uppercase font-weight-bold">SKILLS</h1>
                                     <hr class="hr-red">
                                     <p>Lorem ipsum, dolor sit amet.</p>
                                 </div>
+                            </div>
+-->
+                            <div class="row parallax-caption section-title">
+                                <div class="col-md-12 text-center">
+<!--                                    <h2 class="text-uppercase font-weight-bold">Skills</h2>-->
+                                    <h1 class="text-uppercase font-weight-bold">SKILLS</h1>
+
+<!--
+                                    <p class="section-subtitle">
+                                        "You cannot teach a man anything, you can only help him to find it within himself." (Galileu Galilei)
+                                    </p>
+-->
+
+<!--                                    <span class="divider center"></span>-->
+                                    <hr class="hr-red">
+                                </div>
+                                <!-- //.col-md-8 -->
+                            </div>
+                            <!-- //.row -->
+                            <!-- CIRCLE CHART START -->
+                            <div class="circle-chart text-white">
+                                <div class="row">
+
+                                    <div class="col-sm-4 col-md-4 col-lg-2">
+                                        <div class="item">
+                                            <div class="circle">
+                                                <span class="item-progress" data-percent="85"></span>
+                                            </div>
+                                            <!-- //.circle -->
+
+                                            <span class="percent">85%</span>
+
+                                            <h4 class="text-center uppercase">C#</h4>
+                                        </div>
+                                        <!-- //.item -->
+                                    </div>
+                                    <!-- //.col-md-2 -->
+
+                                    <div class="col-sm-4 col-md-4 col-lg-2">
+                                        <div class="item">
+                                            <div class="circle">
+                                                <span class="item-progress" data-percent="80"></span>
+                                            </div>
+                                            <!-- //.circle -->
+
+                                            <span class="percent">80%</span>
+
+                                            <h4 class="text-center uppercase">Javascript</h4>
+                                        </div>
+                                        <!-- //.item -->
+                                    </div>
+                                    <!-- //.col-md-2 -->
+
+                                    <div class="col-sm-4 col-md-4 col-lg-2">
+                                        <div class="item">
+                                            <div class="circle">
+                                                <span class="item-progress" data-percent="80"></span>
+                                            </div>
+                                            <!-- //.circle -->
+
+                                            <span class="percent">80%</span>
+
+                                            <h4 class="text-center uppercase">jQuery</h4>
+                                        </div>
+                                        <!-- //.item -->
+                                    </div>
+                                    <!-- //.col-md-2 -->
+
+                                    <div class="col-sm-4 col-md-4 col-lg-2">
+                                        <div class="item">
+                                            <div class="circle">
+                                                <span class="item-progress" data-percent="75"></span>
+                                            </div>
+                                            <!-- //.circle -->
+
+                                            <span class="percent">75%</span>
+
+                                            <h4 class="text-center uppercase">SQL Databases</h4>
+                                        </div>
+                                        <!-- //.item -->
+                                    </div>
+                                    <!-- //.col-md-2 -->
+
+                                    <div class="col-sm-4 col-md-4 col-lg-2">
+                                        <div class="item">
+                                            <div class="circle">
+                                                <span class="item-progress" data-percent="85"></span>
+                                            </div>
+                                            <!-- //.circle -->
+
+                                            <span class="percent">85%</span>
+
+                                            <h4 class="text-center uppercase">HTML + CSS</h4>
+                                        </div>
+                                        <!-- //.item -->
+                                    </div>
+                                    <!-- //.col-md-2 -->
+
+                                    <div class="col-sm-4 col-md-4 col-lg-2">
+                                        <div class="item">
+                                            <div class="circle">
+                                                <span class="item-progress" data-percent="75"></span>
+                                            </div>
+                                            <!-- //.circle -->
+
+                                            <span class="percent">75%</span>
+
+                                            <h4 class="text-center uppercase">Bootstrap</h4>
+                                        </div>
+                                        <!-- //.item -->
+                                    </div>
+                                    <!-- //.col-md-2 -->
+                                </div>
+                                <!-- //.row -->
+                            </div>
+                            <!-- //CIRCLE CHART END -->
+                        </div>
                             </div>
                         </div>
                     </div>
@@ -737,6 +861,7 @@
 //        var items = document.querySelectorAll(".timeline-container li");
         var items = document.querySelectorAll(".item-wrapper");
         var itemsTitle = document.querySelectorAll(".block-left-title");
+        var itemsProgress = $(".item-progress");
  
         // code for the isElementInViewport function
 
@@ -746,16 +871,31 @@
               items[i].classList.add("in-view");
             }
           }
+            
           for (var i = 0; i < itemsTitle.length; i++) {
             if (isElementInViewport(itemsTitle[i])) {
               itemsTitle[i].classList.add("in-view");
             }
           }
+            
+        $(".item-progress").each(function() {
+            var item = $(this);
+            if (isElementInViewport(this)) {
+                var maxHeight = 108;
+                var newHeight = maxHeight * ($(this).data('percent') / 100);
+                item.animate({
+                            height: newHeight
+                        },1500);
+            }
+          });
+            
+            
         }
 
         window.addEventListener("load", callbackFunc);
         window.addEventListener("scroll", callbackFunc);
     });
+        
     </script>
 </body>
 
