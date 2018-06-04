@@ -199,32 +199,23 @@ $("#arrow-right-side").click(function() {
         
         
         setTimeout(function(){
-            // Removes container from the right side from normal flow
-//            $(".container-right").removeClass("timeline-absolute");
-
-
-            // Expands container from the left side
+            // Collapses container from the left side
             $(".timeline-container").removeClass("timeline-width-100");
-            $(".container-left").removeClass("timeline-width-100"); //AQUI
-//            $(".timeline-item-content").removeClass("timeline-max-none");
+            $(".container-left").removeClass("timeline-width-100");
             
-            
-            // Removes container from the right side from normal flow
+            // Adds container from the right side to normal flow
             $(".container-right").removeClass("timeline-absolute");
 
         
             setTimeout(function(){
                 
-                // Hides left arrow
+                // Displays left arrow
                 $("#arrow-left-side").removeClass("timeline-hidden");
                 
-                // Hides container from the right side
+                // Displays container from the right side
                 $(".timeline-item-content").removeClass("timeline-max-none");
                 $(".container-right").removeClass("timeline-hidden");
                 
-                
-                // Removes container from the right side from normal flow
-//                $(".container-right").removeClass("timeline-absolute");
             }, 500);
             
         }, 500);
