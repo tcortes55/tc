@@ -153,3 +153,82 @@ function isElementInViewport(el) {
     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
   );
 }
+
+
+///// Expanding timeline details
+$("#arrow-left-side").click(function() {
+    
+    // Hides container from the right side
+    $(".container-right").addClass("timeline-hidden");
+    
+    // Hides left arrow
+    $("#arrow-left-side").addClass("timeline-hidden");
+    
+    setTimeout(function(){
+        // Removes container from the right side from normal flow
+        $(".container-right").addClass("timeline-absolute");
+    
+        // Expands container from the left side
+        $(".container-left").addClass("timeline-width-100");
+        $(".timeline-container").addClass("timeline-width-100");
+        $(".timeline-item-content").addClass("timeline-max-none");
+        
+        setTimeout(function(){
+            // Displays details for each item
+            $(".item-details").addClass("timeline-details-expand");
+            
+            // Displays divider
+            $(".item-details").addClass("timeline-details-divider");
+            
+        }, 500);
+        
+    }, 500);
+    
+});
+
+///// Hiding timeline details
+$("#arrow-right-side").click(function() {
+    
+    
+    // Hides divider
+    $(".item-details").removeClass("timeline-details-divider");
+    
+    setTimeout(function(){
+        // Hides details for each item
+        $(".item-details").removeClass("timeline-details-expand");
+        
+        
+        setTimeout(function(){
+            // Removes container from the right side from normal flow
+//            $(".container-right").removeClass("timeline-absolute");
+
+
+            // Expands container from the left side
+            $(".timeline-container").removeClass("timeline-width-100");
+            $(".container-left").removeClass("timeline-width-100"); //AQUI
+//            $(".timeline-item-content").removeClass("timeline-max-none");
+            
+            
+            // Removes container from the right side from normal flow
+            $(".container-right").removeClass("timeline-absolute");
+
+        
+            setTimeout(function(){
+                
+                // Hides left arrow
+                $("#arrow-left-side").removeClass("timeline-hidden");
+                
+                // Hides container from the right side
+                $(".timeline-item-content").removeClass("timeline-max-none");
+                $(".container-right").removeClass("timeline-hidden");
+                
+                
+                // Removes container from the right side from normal flow
+//                $(".container-right").removeClass("timeline-absolute");
+            }, 500);
+            
+        }, 500);
+        
+    }, 500);
+    
+});
