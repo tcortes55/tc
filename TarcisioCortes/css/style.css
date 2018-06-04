@@ -362,19 +362,27 @@ img {
 
 
 /*Timeline navigation*/
-.arrow-left {
+.timeline-arrow {
     position: absolute;
-    left: 20px;
     top: calc(50vh - 39px);
     color: #2d2d2d7a;
+    z-index: 3;
+}
+.arrow-left {
+    left: 20px;
+}
+.arrow-right {
+    right: 17px;
 }
 .arrow-fixed {
-    left: calc(50vw + 11px);
     position: fixed;
-    top: calc(50vh + 6px)
+    top: calc(50vh + 6px);
 }
-.left-side {
-    left: 50%;
+.arrow-fixed-left {
+    left: calc(50vw + 11px);
+}
+.arrow-fixed-right {
+    right: 17px;
 }
 
 
