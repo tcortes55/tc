@@ -361,6 +361,27 @@ img {
 }
 
 
+/*Timeline navigation*/
+.arrow-left {
+    position: absolute;
+    left: 20px;
+    top: calc(50vh - 39px);
+    color: #2d2d2d7a;
+}
+.arrow-fixed {
+    left: calc(50vw + 11px);
+    position: fixed;
+    top: calc(50vh + 6px)
+}
+.left-side {
+    left: 50%;
+}
+
+
+
+
+
+
 
 
 /*Skills*/
@@ -575,12 +596,10 @@ img {
   transition: all .5s ease-in-out;
 }
  
-/*.timeline-container ul li:nth-child(odd) div {*/
 .container-right .item-wrapper {
   transform: translate3d(1.5vw,0,0);
 }
  
-/*.timeline-container ul li:nth-child(even) div {*/
 .container-left .item-wrapper {
   transform: translate3d(-1.5vw,0,0);
 }
@@ -589,6 +608,7 @@ img {
   visibility: visible;
   opacity: 1;
 }
+
 
 /*Chapter title animation*/
 .block-left-title {
@@ -700,17 +720,6 @@ img {
     .line {
     width: 10px;
     }
-}
-
-
-
-
-
-
-
-
-#resume2 {
-    border: 1px solid black;
 }
 
 

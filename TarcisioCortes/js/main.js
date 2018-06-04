@@ -59,6 +59,7 @@ var execScroll = function() {
         fixTitle("chapter-title-resume", "chapter-content-resume");
         fixTitle("chapter-title-contact", "chapter-content-contact");
     }
+    fixArrows();
 };
 
 function fixTitle(titleId, contentId) {
@@ -92,6 +93,54 @@ function fixTitle(titleId, contentId) {
         title.css("top", navbarOffset);
         title.addClass("title-fixed");
         content.addClass("left-side");
+    }
+}
+
+function fixArrows() {
+    var navbarOffset = 45;
+    var viewHeight = $(window).height();
+    
+    var arrowLeftId = "#arrow-left-side";
+//    var arrowRightId = "#" + contentId;
+    var titleRef = "#chapter-title-resume";
+    var contentRef = "#chapter-content-resume";
+    
+    var arrowLeft = $(arrowLeftId);
+//    var arrowRight = $(arrowRightId);
+    var title = $(titleRef);
+    var content = $(contentRef);
+    
+
+    var titleHeight = title.outerHeight(),
+        contentHeight = content.outerHeight(),
+        contentOffsetTop = content.offset().top,
+        currPos = window.pageYOffset;
+
+    if (currPos <= contentOffsetTop - navbarOffset)
+    {
+        arrowLeft.removeClass("arrow-fixed");
+        arrowLeft.css("top", "");
+//        arrowLeft.css("top", 0);
+//        title.removeClass("title-fixed");
+//        content.removeClass("left-side");
+//        title.css("top", 0);
+    }
+    else if (currPos > (contentOffsetTop - navbarOffset + contentHeight - titleHeight))
+    {
+        arrowLeft.removeClass("arrow-fixed");
+        arrowLeft.css("top", contentHeight - viewHeight/2 + 6);
+//        arrowLeft.css("top", 0.5);
+//        title.removeClass("title-fixed");
+//        content.removeClass("left-side");
+//        title.css("top", contentHeight - titleHeight);
+    }
+    else
+    {
+        arrowLeft.addClass("arrow-fixed");
+        arrowLeft.css("top", "");
+//        title.css("top", navbarOffset);
+//        title.addClass("title-fixed");
+//        content.addClass("left-side");
     }
 }
 
