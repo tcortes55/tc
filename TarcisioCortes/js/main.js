@@ -279,23 +279,31 @@ function expandRightSide() {
     $("#arrow-left-side").off("click");
     
     setTimeout(function(){
+        
+        $(".timeline-container").addClass("timeline-width-100");
+        
         // Removes container from the left side from normal flow
         $(".container-left").addClass("timeline-absolute");
-    
-        // Expands container from the right side
-        $(".container-right").addClass("timeline-width-100");
-        $(".timeline-container").addClass("timeline-width-100");
-        $(".timeline-item-content").addClass("timeline-max-none");
+        $(".container-right").css("margin-left", "auto");
+        $(".container-right").css("margin-right", 0);
         
-        setTimeout(function(){
-            // Displays details for each item
-            $(".item-details").addClass("timeline-details-expand");
-            
-            // Displays divider
-            $(".item-details").addClass("timeline-details-divider");
-            
-            updateButtons();
-            
+        setTimeout(function() {
+        
+            $(".timeline-item-content").addClass("timeline-max-none");
+
+            // Expands container from the right side
+            $(".container-right").addClass("timeline-width-100");
+
+            setTimeout(function(){
+                // Displays details for each item
+                $(".item-details").addClass("timeline-details-expand");
+
+                // Displays divider
+                $(".item-details").addClass("timeline-details-divider");
+
+                updateButtons();
+
+            }, 500);
         }, 500);
         
     }, 500);

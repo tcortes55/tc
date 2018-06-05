@@ -221,10 +221,13 @@ img {
 .container-left {
     margin-right: 15px;
     transition: all .5s ease-in-out;
+    float: left;
 }
 .container-right {
     margin-left: 15px;
     transition: all .5s ease-in-out;
+    float: right;
+    right: 0px;
 }
 .container-right, .container-left {
     width: calc(50% - 15px);
@@ -350,6 +353,7 @@ img {
 /*    padding: 4px;*/
     max-width: 230px;
     transform: translateY(-50%)!important;
+    transition: all .5s ease-in-out;
 }
 .container-left .timeline-item-content {
 /*    left: calc(100% - 200px);*/
