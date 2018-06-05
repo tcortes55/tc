@@ -155,40 +155,34 @@ function isElementInViewport(el) {
 }
 
 
-///// Expanding timeline details
-$("#arrow-left-side").click(function() {
-    
-    // Hides container from the right side
-    $(".container-right").addClass("timeline-hidden");
-    
-    // Hides left arrow
-    $("#arrow-left-side").addClass("timeline-hidden");
-    
-    setTimeout(function(){
-        // Removes container from the right side from normal flow
-        $(".container-right").addClass("timeline-absolute");
-    
-        // Expands container from the left side
-        $(".container-left").addClass("timeline-width-100");
-        $(".timeline-container").addClass("timeline-width-100");
-        $(".timeline-item-content").addClass("timeline-max-none");
-        
-        setTimeout(function(){
-            // Displays details for each item
-            $(".item-details").addClass("timeline-details-expand");
-            
-            // Displays divider
-            $(".item-details").addClass("timeline-details-divider");
-            
-        }, 500);
-        
-    }, 500);
-    
-});
 
-///// Hiding timeline details
-$("#arrow-right-side").click(function() {
+
+
+
+
+
+///// Expanding timeline details
+updateButtons();
+
+
+
+
+function updateButtons() {
+    $(".expand-left-side").click(expandLeftSide);
+    $(".expand-right-side").click(expandRightSide);
+    $(".collapse-right-side").click(collapseRightSide);
+    $(".collapse-left-side").click(collapseLeftSide);
+};
+
+
+
+///// Collapsing timeline details
+function collapseLeftSide() {
     
+    // Modify right arrow action
+    $("#arrow-right-side").removeClass("collapse-left-side");
+    $("#arrow-right-side").addClass("expand-right-side");
+    $("#arrow-right-side").off("click");
     
     // Hides divider
     $(".item-details").removeClass("timeline-details-divider");
@@ -216,10 +210,131 @@ $("#arrow-right-side").click(function() {
                 $(".timeline-item-content").removeClass("timeline-max-none");
                 $(".container-right").removeClass("timeline-hidden");
                 
+                updateButtons();
+                
             }, 500);
             
         }, 500);
         
     }, 500);
     
-});
+};
+
+function collapseRightSide() {
+    
+    // Modify right arrow action
+    $("#arrow-left-side").removeClass("collapse-right-side");
+    $("#arrow-left-side").addClass("expand-left-side");
+    $("#arrow-left-side").off("click");
+    
+    // Hides divider
+    $(".item-details").removeClass("timeline-details-divider");
+    
+    setTimeout(function(){
+        // Hides details for each item
+        $(".item-details").removeClass("timeline-details-expand");
+        
+        
+        setTimeout(function(){
+            // Collapses container from the left side
+            $(".timeline-container").removeClass("timeline-width-100");
+            $(".container-right").removeClass("timeline-width-100");
+            
+            // Adds container from the right side to normal flow
+            $(".container-left").removeClass("timeline-absolute");
+
+        
+            setTimeout(function(){
+                
+                // Displays left arrow
+                $("#arrow-right-side").removeClass("timeline-hidden");
+                
+                // Displays container from the right side
+                $(".timeline-item-content").removeClass("timeline-max-none");
+                $(".container-left").removeClass("timeline-hidden");
+                
+                updateButtons();
+                
+            }, 500);
+            
+        }, 500);
+        
+    }, 500);
+    
+};
+
+
+//Expanding timeline details
+function expandRightSide() {
+    
+    // Hides container from the left side
+    $(".container-left").addClass("timeline-hidden");
+    
+    // Hides right arrow
+    $("#arrow-right-side").addClass("timeline-hidden");
+    
+    // Modify left arrow action
+    $("#arrow-left-side").removeClass("expand-left-side");
+    $("#arrow-left-side").addClass("collapse-right-side");
+    $("#arrow-left-side").off("click");
+    
+    setTimeout(function(){
+        // Removes container from the left side from normal flow
+        $(".container-left").addClass("timeline-absolute");
+    
+        // Expands container from the right side
+        $(".container-right").addClass("timeline-width-100");
+        $(".timeline-container").addClass("timeline-width-100");
+        $(".timeline-item-content").addClass("timeline-max-none");
+        
+        setTimeout(function(){
+            // Displays details for each item
+            $(".item-details").addClass("timeline-details-expand");
+            
+            // Displays divider
+            $(".item-details").addClass("timeline-details-divider");
+            
+            updateButtons();
+            
+        }, 500);
+        
+    }, 500);
+    
+};
+
+function expandLeftSide() {
+    
+    // Hides container from the right side
+    $(".container-right").addClass("timeline-hidden");
+    
+    // Hides left arrow
+    $("#arrow-left-side").addClass("timeline-hidden");
+    
+    // Modify right arrow action
+    $("#arrow-right-side").removeClass("expand-right-side");
+    $("#arrow-right-side").addClass("collapse-left-side");
+    $("#arrow-right-side").off("click");
+    
+    setTimeout(function(){
+        // Removes container from the right side from normal flow
+        $(".container-right").addClass("timeline-absolute");
+    
+        // Expands container from the left side
+        $(".container-left").addClass("timeline-width-100");
+        $(".timeline-container").addClass("timeline-width-100");
+        $(".timeline-item-content").addClass("timeline-max-none");
+        
+        setTimeout(function(){
+            // Displays details for each item
+            $(".item-details").addClass("timeline-details-expand");
+            
+            // Displays divider
+            $(".item-details").addClass("timeline-details-divider");
+            
+            updateButtons();
+            
+        }, 500);
+        
+    }, 500);
+    
+};
