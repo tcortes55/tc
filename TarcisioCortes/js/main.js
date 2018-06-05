@@ -197,11 +197,12 @@ function collapseLeftSide() {
             $(".timeline-container").removeClass("timeline-width-100");
             $(".container-left").removeClass("timeline-width-100");
             
-            // Adds container from the right side to normal flow
-            $(".container-right").removeClass("timeline-absolute");
 
         
             setTimeout(function(){
+                
+                // Adds container from the right side to normal flow
+                $(".container-right").removeClass("timeline-absolute");
                 
                 // Displays left arrow
                 $("#arrow-left-side").removeClass("timeline-hidden");
@@ -325,8 +326,8 @@ function expandLeftSide() {
     setTimeout(function(){
         // Removes container from the right side from normal flow
         $(".container-right").addClass("timeline-absolute");
-        $(".container-left").css("margin-left", 0);
-        $(".container-left").css("margin-right", "auto");
+        $(".container-right").css("margin-left", 0);
+        $(".container-right").css("margin-right", "auto");
     
         // Expands container from the left side
         $(".container-left").addClass("timeline-width-100");
