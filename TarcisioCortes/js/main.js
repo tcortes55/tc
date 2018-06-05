@@ -240,11 +240,10 @@ function collapseRightSide() {
             $(".timeline-container").removeClass("timeline-width-100");
             $(".container-right").removeClass("timeline-width-100");
             
-            // Adds container from the right side to normal flow
-            $(".container-left").removeClass("timeline-absolute");
-
-        
             setTimeout(function(){
+                
+                // Adds container from the right side to normal flow
+                $(".container-left").removeClass("timeline-absolute");
                 
                 // Displays left arrow
                 $("#arrow-right-side").removeClass("timeline-hidden");
