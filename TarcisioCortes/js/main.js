@@ -325,6 +325,8 @@ function expandLeftSide() {
     setTimeout(function(){
         // Removes container from the right side from normal flow
         $(".container-right").addClass("timeline-absolute");
+        $(".container-left").css("margin-left", 0);
+        $(".container-left").css("margin-right", "auto");
     
         // Expands container from the left side
         $(".container-left").addClass("timeline-width-100");
