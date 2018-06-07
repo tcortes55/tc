@@ -237,6 +237,7 @@ img {
 /*Item with content:*/
 .timeline-item {
     font-size: 0.9em;
+    transition: all .5s ease-in-out;
 }
 .container-left .timeline-item {
     border-right: 1px solid red;

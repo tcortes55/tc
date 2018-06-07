@@ -141,6 +141,7 @@ function fixArrows() {
 
 $(document).on( 'scroll', execScroll);
 $(window).on( 'resize', execScroll);
+$(".timeline-container").on( 'resize', execScroll);
 
 
 ///// Animate timeline
@@ -174,6 +175,13 @@ function updateButtons() {
     $(".collapse-left-side").click(collapseLeftSide);
 };
 
+var maxHeight = function(elems){
+    return Math.max.apply(null, elems.map(function ()
+    {
+        return $(this).height();
+    }).get());
+}
+
 
 
 ///// Collapsing timeline details
@@ -182,7 +190,10 @@ function collapseLeftSide() {
     // Modify right arrow action
     $("#arrow-right-side").removeClass("collapse-left-side");
     $("#arrow-right-side").addClass("expand-right-side");
+    
+    // Removes click actions
     $("#arrow-right-side").off("click");
+    $("#arrow-left-side").off("click");
     
     // Hides divider
     $(".item-details").removeClass("timeline-details-divider");
@@ -190,6 +201,10 @@ function collapseLeftSide() {
     setTimeout(function(){
         // Hides details for each item
         $(".item-details").removeClass("timeline-details-expand");
+        
+        // Removes max height from items
+        $(".container-left .timeline-item").css("height", "");
+        execScroll();
         
         
         setTimeout(function(){
@@ -212,13 +227,13 @@ function collapseLeftSide() {
                 $(".container-right").removeClass("timeline-hidden");
                 
                 updateButtons();
-                
+                execScroll();
             }, 500);
-            
+            execScroll();
         }, 500);
-        
+        execScroll();
     }, 500);
-    
+    execScroll();
 };
 
 function collapseRightSide() {
@@ -226,7 +241,10 @@ function collapseRightSide() {
     // Modify right arrow action
     $("#arrow-left-side").removeClass("collapse-right-side");
     $("#arrow-left-side").addClass("expand-left-side");
+    
+    // Removes click actions
     $("#arrow-left-side").off("click");
+    $("#arrow-right-side").off("click");
     
     // Hides divider
     $(".item-details").removeClass("timeline-details-divider");
@@ -254,13 +272,13 @@ function collapseRightSide() {
                 $(".container-left").removeClass("timeline-hidden");
                 
                 updateButtons();
-                
+                execScroll();
             }, 500);
-            
+            execScroll();
         }, 500);
-        
+        execScroll();
     }, 500);
-    
+    execScroll();
 };
 
 
@@ -272,6 +290,7 @@ function expandRightSide() {
     
     // Hides right arrow
     $("#arrow-right-side").addClass("timeline-hidden");
+    $("#arrow-right-side").off("click");
     
     // Modify left arrow action
     $("#arrow-left-side").removeClass("expand-left-side");
@@ -302,21 +321,25 @@ function expandRightSide() {
                 $(".item-details").addClass("timeline-details-divider");
 
                 updateButtons();
+                execScroll();
 
             }, 500);
+            execScroll();
         }, 500);
-        
+        execScroll();
     }, 500);
-    
+    execScroll();execScroll();
 };
 
 function expandLeftSide() {
     
     // Hides container from the right side
     $(".container-right").addClass("timeline-hidden");
+    $(".container-right").css("right", "200px");
     
     // Hides left arrow
     $("#arrow-left-side").addClass("timeline-hidden");
+    $("#arrow-left-side").off("click");
     
     // Modify right arrow action
     $("#arrow-right-side").removeClass("expand-right-side");
@@ -326,8 +349,9 @@ function expandLeftSide() {
     setTimeout(function(){
         // Removes container from the right side from normal flow
         $(".container-right").addClass("timeline-absolute");
-        $(".container-right").css("margin-left", 0);
-        $(".container-right").css("margin-right", "auto");
+//        $(".container-right").css("margin-left", 0);
+//        $(".container-right").css("margin-right", "auto");
+//        $(".container-right").css("right", "20px");
     
         // Expands container from the left side
         $(".container-left").addClass("timeline-width-100");
@@ -341,10 +365,21 @@ function expandLeftSide() {
             // Displays divider
             $(".item-details").addClass("timeline-details-divider");
             
-            updateButtons();
-            
+            setTimeout(function(){
+                // Sets adequate height to each item
+                var itemsHeight = maxHeight($(".container-left .timeline-item-content"));
+//                console.log(itemsHeight);
+                itemsHeight = (itemsHeight + 16) * 1.05;
+                console.log(itemsHeight);
+                $(".container-left .timeline-item").css("height", itemsHeight);
+//                execScroll();
+
+                updateButtons();
+                execScroll();
+            }, 500);
+            execScroll();
         }, 500);
-        
+        execScroll();
     }, 500);
-    
+    execScroll();
 };
