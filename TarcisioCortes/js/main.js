@@ -3,7 +3,7 @@ var d = new Date();
 $("#currYear").text(d.getFullYear());
 
 
-///// Smooth scroll
+///// Smooth scroll (from menu links)
 
 // Select all links with hashes
 $('a[href*="#"]')
@@ -144,6 +144,8 @@ $(window).on( 'resize', execScroll);
 $(".timeline-container").on( 'resize', execScroll);
 
 
+
+
 ///// Animate timeline
 function isElementInViewport(el) {
   var rect = el.getBoundingClientRect();
@@ -162,11 +164,8 @@ function isElementInViewport(el) {
 
 
 
-///// Expanding timeline details
+///// Refreshing buttons actions
 updateButtons();
-
-
-
 
 function updateButtons() {
     $(".expand-left-side").click(expandLeftSide);
@@ -175,13 +174,13 @@ function updateButtons() {
     $(".collapse-left-side").click(collapseLeftSide);
 };
 
+///// Gets max height from a set of elements
 var maxHeight = function(elems){
     return Math.max.apply(null, elems.map(function ()
     {
         return $(this).height();
     }).get());
 }
-
 
 
 ///// Collapsing timeline details
