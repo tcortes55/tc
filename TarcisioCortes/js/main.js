@@ -205,7 +205,11 @@ function collapseLeftSide() {
         // Removes max height from items
         $(".container-left .timeline-item").css("height", "");
         $(".container-left").css("margin-top", "");
-        execScroll();
+                    
+        var intervalID = setInterval(execScroll, 1);
+        setTimeout(function(){
+            clearInterval(intervalID);
+        }, 500);
         
         
         setTimeout(function(){
@@ -228,13 +232,10 @@ function collapseLeftSide() {
                 $(".container-right").removeClass("timeline-hidden");
                 
                 updateButtons();
-                execScroll();
+                
             }, 500);
-            execScroll();
         }, 500);
-        execScroll();
     }, 500);
-    execScroll();
 };
 
 function collapseRightSide() {
@@ -257,7 +258,11 @@ function collapseRightSide() {
         // Removes max height from items
         $(".container-right .timeline-item").css("height", "");
         $(".container-right").css("margin-top", "");
-        execScroll();
+                    
+        var intervalID = setInterval(execScroll, 1);
+        setTimeout(function(){
+            clearInterval(intervalID);
+        }, 500);
         
         setTimeout(function(){
             // Collapses container from the left side
@@ -277,13 +282,10 @@ function collapseRightSide() {
                 $(".container-left").removeClass("timeline-hidden");
                 
                 updateButtons();
-                execScroll();
+                
             }, 500);
-            execScroll();
         }, 500);
-        execScroll();
     }, 500);
-    execScroll();
 };
 
 
@@ -335,15 +337,17 @@ function expandRightSide() {
                     $(".container-right .timeline-item.item-hide").css("height", 0);
 
                     updateButtons();
-                    execScroll();
+                    
+                    var intervalID = setInterval(execScroll, 1);
+                    setTimeout(function(){
+                        clearInterval(intervalID);
+                    }, 500);
+                    
                 }, 500);
 
             }, 500);
-            execScroll();
         }, 500);
-        execScroll();
     }, 500);
-    execScroll();execScroll();
 };
 
 function expandLeftSide() {
@@ -393,10 +397,13 @@ function expandLeftSide() {
 
                 updateButtons();
                 execScroll();
+                    
+                var intervalID = setInterval(execScroll, 1);
+                setTimeout(function(){
+                    clearInterval(intervalID);
+                }, 500);
+                
             }, 500);
-            execScroll();
         }, 500);
-        execScroll();
     }, 500);
-    execScroll();
 };
