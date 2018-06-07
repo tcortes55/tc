@@ -204,6 +204,7 @@ function collapseLeftSide() {
         
         // Removes max height from items
         $(".container-left .timeline-item").css("height", "");
+        $(".container-left").css("margin-top", "");
         execScroll();
         
         
@@ -255,6 +256,7 @@ function collapseRightSide() {
         
         // Removes max height from items
         $(".container-right .timeline-item").css("height", "");
+        $(".container-right").css("margin-top", "");
         execScroll();
         
         setTimeout(function(){
@@ -329,6 +331,7 @@ function expandRightSide() {
                     itemsHeight = (itemsHeight + 16) * 1.05;
                     console.log(itemsHeight);
                     $(".container-right .timeline-item.item-expand").css("height", itemsHeight);
+                    $(".container-right").css("margin-top", itemsHeight/4);
                     $(".container-right .timeline-item.item-hide").css("height", 0);
 
                     updateButtons();
@@ -384,6 +387,7 @@ function expandLeftSide() {
                 itemsHeight = (itemsHeight + 16) * 1.05;
                 console.log(itemsHeight);
                 $(".container-left .timeline-item.item-expand").css("height", itemsHeight);
+                $(".container-left").css("margin-top", itemsHeight/4);
                 $(".container-left .timeline-item.item-hide").css("height", 0);
 //                execScroll();
 
