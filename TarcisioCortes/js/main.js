@@ -253,6 +253,9 @@ function collapseRightSide() {
         // Hides details for each item
         $(".item-details").removeClass("timeline-details-expand");
         
+        // Removes max height from items
+        $(".container-right .timeline-item").css("height", "");
+        execScroll();
         
         setTimeout(function(){
             // Collapses container from the left side
@@ -319,9 +322,18 @@ function expandRightSide() {
 
                 // Displays divider
                 $(".item-details").addClass("timeline-details-divider");
+            
+                setTimeout(function(){
+                    // Sets adequate height to each item
+                    var itemsHeight = maxHeight($(".container-right .timeline-item-content"));
+                    itemsHeight = (itemsHeight + 16) * 1.05;
+                    console.log(itemsHeight);
+                    $(".container-right .timeline-item.item-expand").css("height", itemsHeight);
+                    $(".container-right .timeline-item.item-hide").css("height", 0);
 
-                updateButtons();
-                execScroll();
+                    updateButtons();
+                    execScroll();
+                }, 500);
 
             }, 500);
             execScroll();
@@ -371,7 +383,8 @@ function expandLeftSide() {
 //                console.log(itemsHeight);
                 itemsHeight = (itemsHeight + 16) * 1.05;
                 console.log(itemsHeight);
-                $(".container-left .timeline-item").css("height", itemsHeight);
+                $(".container-left .timeline-item.item-expand").css("height", itemsHeight);
+                $(".container-left .timeline-item.item-hide").css("height", 0);
 //                execScroll();
 
                 updateButtons();
