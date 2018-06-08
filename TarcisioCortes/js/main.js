@@ -58,8 +58,13 @@ var execScroll = function() {
         fixTitle("chapter-title-profile", "chapter-content-profile");
         fixTitle("chapter-title-resume", "chapter-content-resume");
         fixTitle("chapter-title-contact", "chapter-content-contact");
+        fixArrows(true);
     }
-    fixArrows();
+    else
+    {
+        fixArrows(false);
+    }
+    
 };
 
 function fixTitle(titleId, contentId) {
@@ -96,7 +101,8 @@ function fixTitle(titleId, contentId) {
     }
 }
 
-function fixArrows() {
+function fixArrows(isLargeScreen) {
+    
     var navbarOffset = 45;
     var viewHeight = $(window).height();
     
@@ -110,12 +116,27 @@ function fixArrows() {
     var title = $(titleRef);
     var content = $(contentRef);
     
-
+    
     var titleHeight = title.outerHeight(),
         contentHeight = content.outerHeight(),
         contentOffsetTop = content.offset().top,
         currPos = window.pageYOffset;
-
+    
+    
+    
+    // Depending on screen size, a different value will be used as reference for positioning the arrows
+    var valueRef = 0;
+    if (isLargeScreen)
+    {
+        valueRef = contentOffsetTop - navbarOffset + contentHeight - titleHeight;
+    }
+    else
+    {
+        valueRef = contentOffsetTop  + contentHeight - viewHeight;
+    }
+    
+    
+    // Evaluates current position in order to set arrows' position
     if (currPos <= contentOffsetTop - navbarOffset)
     {
         arrowLeft.removeClass("arrow-fixed arrow-fixed-left");
@@ -123,7 +144,7 @@ function fixArrows() {
         arrowRight.removeClass("arrow-fixed arrow-fixed-right");
         arrowRight.css("top", "");
     }
-    else if (currPos > (contentOffsetTop - navbarOffset + contentHeight - titleHeight))
+    else if (currPos > valueRef)
     {
         arrowLeft.removeClass("arrow-fixed arrow-fixed-left");
         arrowLeft.css("top", contentHeight - viewHeight/2 + 6);
