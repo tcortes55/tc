@@ -351,7 +351,7 @@ function expandRightSide() {
                     // Sets adequate height to each item
                     var itemsHeight = maxHeight($(".container-right .timeline-item-content"));
                     itemsHeight = (itemsHeight + 16) * 1.05;
-                    console.log(itemsHeight);
+                    
                     $(".container-right .timeline-item.item-expand").css("height", itemsHeight);
                     $(".container-right").css("margin-top", itemsHeight/4);
                     $(".container-right .timeline-item.item-hide").css("height", 0);
@@ -388,9 +388,6 @@ function expandLeftSide() {
     setTimeout(function(){
         // Removes container from the right side from normal flow
         $(".container-right").addClass("timeline-absolute");
-//        $(".container-right").css("margin-left", 0);
-//        $(".container-right").css("margin-right", "auto");
-//        $(".container-right").css("right", "20px");
     
         // Expands container from the left side
         $(".container-left").addClass("timeline-width-100");
@@ -407,16 +404,13 @@ function expandLeftSide() {
             setTimeout(function(){
                 // Sets adequate height to each item
                 var itemsHeight = maxHeight($(".container-left .timeline-item-content"));
-//                console.log(itemsHeight);
                 itemsHeight = (itemsHeight + 16) * 1.05;
-                console.log(itemsHeight);
+                
                 $(".container-left .timeline-item.item-expand").css("height", itemsHeight);
                 $(".container-left").css("margin-top", itemsHeight/4);
                 $(".container-left .timeline-item.item-hide").css("height", 0);
-//                execScroll();
 
                 updateButtons();
-                execScroll();
                     
                 var intervalID = setInterval(execScroll, 1);
                 setTimeout(function(){

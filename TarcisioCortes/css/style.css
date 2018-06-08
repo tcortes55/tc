@@ -420,7 +420,7 @@ img {
     position: absolute;
 }
 .timeline-width-100 {
-    width: 100%;
+    width: 100%!important;
     transition: all .5s ease-in-out;
 }
 .timeline-max-none {
