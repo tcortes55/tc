@@ -68,8 +68,10 @@ section {
 /*    min-height: calc(100vh - 50px);*/
 }
 
-.row.resume {
-    background-color: #040507;
+.row.resume,
+#skills,
+#parallax-1 {
+    background-color: rgba(4, 5, 7, 1);
 }
 
 .top-menu {
@@ -414,6 +416,11 @@ img {
 }
 .arrow-fixed-right {
     right: 17px;
+}
+.arrow-mobile {
+/*    position: fixed;*/
+/*    top: calc(50vh + 6px);*/
+/*    transition: top .1s ease-in-out;*/
 }
 /*Animating timeline details*/
 .timeline-hidden {
