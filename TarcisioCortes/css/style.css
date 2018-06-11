@@ -399,7 +399,7 @@ img {
     top: calc(50vh - 39px);
     color: #2d2d2d7a;
     z-index: 3;
-    transition: opacity .5s ease-in-out;
+    transition: opacity .5s ease-in-out, top .4s ease-in-out;
 }
 .arrow-left {
     left: 20px;
@@ -420,7 +420,7 @@ img {
 .arrow-mobile {
 /*    position: fixed;*/
 /*    top: calc(50vh + 6px);*/
-/*    transition: top .1s ease-in-out;*/
+/*    transition: top .4s ease-in-out;*/
 }
 /*Animating timeline details*/
 .timeline-hidden {

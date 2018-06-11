@@ -143,7 +143,7 @@ function fixArrows(isLargeScreen) {
     
     
     // Evaluates current position in order to set arrows' position
-    if (isLargeScreen)
+    if (1 === 2)
     {
 
     
@@ -171,27 +171,65 @@ function fixArrows(isLargeScreen) {
     }
     else
     {
-        if (currPos <= contentOffsetTop - navbarOffset)
-        {
-            arrowLeft.removeClass("arrow-fixed arrow-fixed-left");
-            arrowLeft.css("top", viewHeight/2 - 39);
-            arrowRight.removeClass("arrow-fixed arrow-fixed-right");
-            arrowRight.css("top", viewHeight/2 - 39);
-        }
-        else if (currPos > valueRef)
-        {
-            arrowLeft.removeClass("arrow-fixed arrow-fixed-left");
-            arrowLeft.css("top", contentHeight - viewHeight/2 + 6);
-            arrowRight.removeClass("arrow-fixed arrow-fixed-right");
-            arrowRight.css("top", contentHeight - viewHeight/2 + 6);
-        }
-        else
-        {
-            arrowLeft.addClass("arrow-fixed arrow-fixed-left");
-            arrowLeft.css("top", viewHeight/2 + 6);
-            arrowRight.addClass("arrow-fixed arrow-fixed-right");
-            arrowRight.css("top", viewHeight/2 + 6);
-        }
+//        if (currPos <= contentOffsetTop - navbarOffset)
+//        {
+//            arrowLeft.removeClass("arrow-fixed arrow-fixed-left");
+//            arrowLeft.css("top", viewHeight/2 - 39);
+//            arrowRight.removeClass("arrow-fixed arrow-fixed-right");
+//            arrowRight.css("top", viewHeight/2 - 39);
+//        }
+//        else if (currPos > valueRef)
+//        {
+//            arrowLeft.removeClass("arrow-fixed arrow-fixed-left");
+//            arrowLeft.css("top", contentHeight - viewHeight/2 + 6);
+//            arrowRight.removeClass("arrow-fixed arrow-fixed-right");
+//            arrowRight.css("top", contentHeight - viewHeight/2 + 6);
+//        }
+//        else
+//        {
+//            arrowLeft.addClass("arrow-fixed arrow-fixed-left");
+//            arrowLeft.css("top", viewHeight/2 + 6);
+//            arrowRight.addClass("arrow-fixed arrow-fixed-right");
+//            arrowRight.css("top", viewHeight/2 + 6);
+//        }
+        
+        var delay = 150;
+        var timeout = null;
+        
+        arrowLeft.css({top: arrowLeft.css("top")});
+        arrowRight.css({top: arrowRight.css("top")});
+        
+        clearTimeout(timeout);
+        timeout = setTimeout(function(){
+
+
+            if (currPos <= contentOffsetTop - navbarOffset)
+            {
+//                    arrowLeft.removeClass("arrow-mobile");
+                arrowLeft.css("top", viewHeight/2 - 39);
+//                    arrowRight.removeClass("arrow-mobile");
+                arrowRight.css("top", viewHeight/2 - 39);
+//                console.log("cima");
+            }
+            else if (currPos > valueRef)
+            {
+//                    arrowLeft.removeClass("arrow-mobile");
+                arrowLeft.css("top", contentHeight - viewHeight/2 + 6);
+//                    arrowRight.removeClass("arrow-mobile");
+                arrowRight.css("top", contentHeight - viewHeight/2 + 6);
+//                console.log("baixo");
+            }
+            else
+            {
+//                    arrowLeft.addClass("arrow-mobile");
+                arrowLeft.css("top", viewHeight/2 + currPos - contentOffsetTop + 6);
+//                    arrowRight.addClass("arrow-mobile");
+                arrowRight.css("top", viewHeight/2 + currPos - contentOffsetTop + 6);
+//                console.log("meio");
+            }
+
+
+        },delay);
     }
         
 }
